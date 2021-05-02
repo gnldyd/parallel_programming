@@ -1,7 +1,9 @@
-// 2021 1st semester - Parallel Computing - Assignment 7
-// 202172213 Hwiyong Chang
-// $ mpicc -o run pingpong_202172213.c
-// $ mpiexec -n 2 run
+/*
+ * 2021 1st semester - Parallel Computing - Assignment 7
+ * 202172213 Hwiyong Chang
+ * $ mpicc -o run.o pingpong_202172213.c
+ * $ mpiexec -n 2 run.o
+ */
 
 #include <stdio.h>
 #include <time.h>
@@ -69,6 +71,7 @@ int main(void) {
     int rally_count = 10;
     pingpong_Cclock(my_rank, rally_count); // C clock time
     pingpong_MPIWtime(my_rank, rally_count); // MPI time
+    printf("comm_sz = %d\n", comm_sz);
 
     MPI_Finalize();
     return 0;
