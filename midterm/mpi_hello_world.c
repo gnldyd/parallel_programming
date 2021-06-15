@@ -1,3 +1,10 @@
+/*
+ * 2021 1st semester - Parallel Computing - mid exam
+ * 202172213 Hwiyong Chang
+ * $ mpicc -o run.o mpi_hello_world.c
+ * $ mpiexec -n 4 run.o
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <mpi.h>
