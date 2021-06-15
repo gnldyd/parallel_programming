@@ -29,11 +29,13 @@ int main(int argc, char *argv[]) {
     int i;
     float sum = 0.0;
 
+    /* one method */
     #pragma omp parallel for num_threads(2) \
         reduction(+:sum)
     for (i = 0; i < 4; i++)
         sum += a[i];
 
+    /* other method */
     // #pragma omp parallel num_threads(2) reduction(+:sum)
     // sum += local_sum(a, 0, 4, 4);
 
